@@ -4,11 +4,11 @@ import { css,jsx} from "@emotion/react";
 import NavBar from "./components/NavBar";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
-import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
+import {HashRouter,BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import DetailCocktail from "./components/DetailCocktail";
 function App() {
   return (
-    <Router>
+    <HashRouter basename='/'>
       <div css={styles}>
         <NavBar/>
         <Route path="/" exact >
@@ -21,7 +21,7 @@ function App() {
           <DetailCocktail/>
         </Route>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 const styles = css
