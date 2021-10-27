@@ -2,6 +2,7 @@
 /**@jsx jsx */  
 import { css,jsx} from "@emotion/react";
 import logo from '../logo.svg'
+import { Link } from 'react-router-dom';
 function NavBar(){
     return(
         <nav css = {styles}>
@@ -9,8 +10,12 @@ function NavBar(){
                 <img src ={logo}></img>
             </div>
             <ul className = "nav-links">
-                <li>home</li>
-                <li>about</li>
+                <Link to="/" className="link">
+                    <li>home</li>
+                </Link>
+                <Link to="/about" className="link">
+                    <li>about</li>
+                </Link>
             </ul>
         </nav>
     )
@@ -34,6 +39,10 @@ background-color: white;
     display: flex;
     margin-right: 70px;
     margin-top: 20px;
+    .link {
+        text-decoration: none;
+        color: #476a2e;
+    }
 }
 .nav-links li{
     margin: 0 20px;

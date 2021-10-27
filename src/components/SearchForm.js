@@ -1,13 +1,16 @@
 /** @jsxRuntime classic */
 /**@jsx jsx */  
 import { css,jsx} from "@emotion/react";
-
+import { useContext } from "react";
+import { CocktailsContext } from "../Context";
 function SearchForm(){
+        const {setSearchKey, handleSubmit} = useContext(CocktailsContext)
+
     return(
         <div css={styles}>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="name">search your favorite cocktail</label>
-                <input type="text" id="name" name ="name"></input>
+                <input type="text" id="name" name ="name" onChange={e => setSearchKey(e.target.value)}></input>
             </form>
         </div>
     )
